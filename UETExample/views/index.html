@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+
+<p>This is a example web page showing different UET functionality for Bing Ads, it is a live example companion of code discussed in <a href="https://msdn.microsoft.com/en-us/library/bing-ads-universal-event-tracking-uet-tags-analytics-scripts.aspx">MSDN: Managing Analytics with Universal Event Tracking </p>
+
+
+<script>
+    (function(w, d, t, r, u) {
+        var f, n, i;
+        w[u] = w[u] || [], f = function() {
+            var o = {
+
+                /*
+                This is the tag ID
+                */
+                
+                ti: "4014297"
+            };
+            o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad")
+        }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function() {
+            var s = this.readyState;
+            s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null)
+        }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i)
+
+        /*
+        //bat.bing.com/bat.js what makes it possible to track goal events
+
+        uetq is a global array to track events
+        each time an event occurs, a log of that event is pushed onto the uetq array (this makes it trivial to see if events are being fired, see how many you expect to be fired then see what the length of uetq is, take the difference and that's how many goals are not working)
+            If the goal exists within the bing ads UI then you can just monitor the changes to
+            uetq to see if events are properly being loaded
+
+
+        You can even define your own events by pushing things 
+        such as 
+
+        <button onclick="uetq.push({ 'ec':'Video', 'ea':'Play', 'el':'Product Demo', 'ev':'5' });">Play</button>
+        */
+
+    })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+</script>
+
+</body>
+</html>
